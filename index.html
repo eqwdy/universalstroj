@@ -502,31 +502,45 @@
         <div class="carousel__inner container">
           <h2 class="carousel__title title-medium">Наши работы</h2>
           <div class="carousel__body slider">
-            <div class="slider__images">
-              <img src="/images/slider/1.png" alt="" />
-              <img src="/images/slider/2.png" alt="" />
-              <img src="/images/slider/3.png" alt="" />
-              <img src="/images/slider/4.png" alt="" />
-              <img src="/images/slider/5.png" alt="" />
-              <img src="/images/slider/6.png" alt="" />
-            </div>
+            <ul class="slider__items">
+              <li class="slider__item">
+                <img src="/images/slider/1.png" alt="" />
+              </li>
+              <li class="slider__item">
+                <img src="/images/slider/2.png" alt="" />
+              </li>
+              <li class="slider__item">
+                <img src="/images/slider/3.png" alt="" />
+              </li>
+              <li class="slider__item">
+                <img src="/images/slider/4.png" alt="" />
+              </li>
+              <li class="slider__item">
+                <img src="/images/slider/5.png" alt="" />
+              </li>
+              <li class="slider__item">
+                <img src="/images/slider/6.png" alt="" />
+              </li>
+            </ul>
             <button
               type="button"
               class="slider__button"
-              aria-label="Следующая работа"
+              aria-label="Предыдущая работа"
+              onclick="sliderMove(false)"
             >
               <img src="/images/slider/arrow-circle-left.svg" alt="" />
             </button>
             <button
               type="button"
               class="slider__button"
-              aria-label="Предыдущая работа"
+              aria-label="Следующая работа"
+              onclick="sliderMove(true)"
             >
               <img src="/images/slider/arrow-circle-right.svg" alt="" />
             </button>
           </div>
           <button type="button" class="carousel__button button button-arrow">
-            Больше наших работ
+            Больше
           </button>
         </div>
       </section>

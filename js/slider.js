@@ -1,17 +1,30 @@
-const slider = document.querySelector(".slider__images");
-const slides = document.querySelectorAll(".slider__images img");
-const prevBtn = document.querySelectorAll(".slider__button")[0];
-const nextBtn = document.querySelectorAll(".slider__button")[1];
+const slider = document.querySelector(".slider__items");
+const slide = document.querySelector(".slider__item");
 
-let index = 0;
-
-function showSlide(i) {
-  if (i < 0) index = slides.length - 1;
-  else if (i >= slides.length) index = 0;
-  else index = i;
-
-  slider.style.transform = `translateX(-${index * 100}%)`;
+function sliderMove(positive = true) {
+  const slideWidth = slide.offsetWidth;
+  if (positive) {
+    if (
+      slider.scrollLeft + slideWidth >=
+      slider.scrollWidth - slider.clientWidth
+    ) {
+      slider.scrollLeft = 0; // возвращаемся в начало
+    } else {
+      slider.scrollLeft += slideWidth;
+    }
+  } else {
+    if (slider.scrollLeft - slideWidth < 0) {
+      slider.scrollLeft = slider.scrollWidth; // прыгаем в конец
+    } else {
+      slider.scrollLeft -= slideWidth;
+    }
+  }
 }
 
-prevBtn.addEventListener("click", () => showSlide(index - 1));
-nextBtn.addEventListener("click", () => showSlide(index + 1));
+// slider.addEventListener("wheel", (e) => {
+//   if (e.deltaY > 0) {
+//     e.currentTarget.scrollLeft += e.currentTarget.clientWidth;
+//   } else {
+//     e.currentTarget.scrollLeft -= e.currentTarget.clientWidth;
+//   }
+// });
