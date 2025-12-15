@@ -1,15 +1,10 @@
 .freeConsultation {
-  position: relative;
   color: white;
+  background-color: var(--color-dark-gray);
 
-  &::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    background: url("/images/freeConsultation/background.png") center center /
-      cover no-repeat;
-    filter: brightness(0.5);
+  &__title {
+    line-height: 1.1;
+    margin-bottom: 10px;
   }
 
   &__description {
