@@ -658,7 +658,7 @@
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: url("/images/firstPage/hero background.jpeg") center center/cover no-repeat;
+  background: url("/images/index/hero/hero background.jpeg") center center/cover no-repeat;
   filter: brightness(0.5);
 }
 .hero__inner {

@@ -193,47 +193,100 @@
             Крыму. Мы оперативно ответим на ваш запрос и поможем подобрать
             оптимальные решения для вашего участка или проекта.
           </p>
-          <form class="contact__form form" id="form">
-            <h3 class="form__title">Оставьте заявку через форму</h3>
-            <ul class="form__items">
-              <li class="form__item">
-                <input
-                  type="text"
-                  name="formName"
-                  id="formName"
-                  autocomplete="name"
-                  class="form__input"
-                  placeholder=" "
-                />
-                <label for="formName" class="form__label">Имя*</label>
-              </li>
-              <li class="form__item">
-                <input
-                  type="tel"
-                  name="formTel"
-                  id="formTel"
-                  autocomplete="tel"
-                  class="form__input"
-                  placeholder=" "
-                />
-                <label for="formTel" class="form__label">Телефон*</label>
-              </li>
-              <li class="form__item">
-                <textarea
-                  name="formMessage"
-                  id="formMessage"
-                  class="form__textarea form__input"
-                  placeholder=" "
-                ></textarea>
-                <label for="formMessage" class="form__label">Сообщение</label>
-              </li>
-            </ul>
-            <button type="submit" class="form__button button">
-              Отправить заявку
-            </button>
-          </form>
-          <!-- Validation, AJAX -->
-          <script src="/js/contacts/form.js"></script>
+          <div class="contact__wrapper">
+            <form class="contact__form form" id="form">
+              <h3 class="form__title">Оставьте заявку через форму</h3>
+              <ul class="form__items">
+                <li class="form__item">
+                  <input
+                    type="text"
+                    name="formName"
+                    id="formName"
+                    autocomplete="name"
+                    class="form__input"
+                    placeholder=" "
+                  />
+                  <label for="formName" class="form__label">Имя*</label>
+                </li>
+                <li class="form__item">
+                  <input
+                    type="tel"
+                    name="formTel"
+                    id="formTel"
+                    autocomplete="tel"
+                    class="form__input"
+                    placeholder=" "
+                  />
+                  <label for="formTel" class="form__label">Телефон*</label>
+                </li>
+                <li class="form__item">
+                  <textarea
+                    name="formMessage"
+                    id="formMessage"
+                    class="form__textarea form__input"
+                    placeholder=" "
+                  ></textarea>
+                  <label for="formMessage" class="form__label">Сообщение</label>
+                </li>
+              </ul>
+              <button type="submit" class="form__button button">
+                Отправить заявку
+              </button>
+            </form>
+            <div class="contact__pluses">
+              <ul class="contact__pluses-items">
+                <li class="contact__pluses-item plus">
+                  <div class="plus__img">
+                    <img src="/images/contacts/contact/wrench.svg" alt="" />
+                  </div>
+                  <div class="plus__wrapper">
+                    <h3 class="plus__title">Опыт</h3>
+                    <p class="plus__description">
+                      Более десяти лет успешно производим, продаём и укладываем
+                      тротуарную плитку в Крыму
+                    </p>
+                  </div>
+                </li>
+                <li class="contact__pluses-item plus">
+                  <div class="plus__img">
+                    <img src="/images/contacts/contact/gear.svg" alt="" />
+                  </div>
+                  <div class="plus__wrapper">
+                    <h3 class="plus__title">Собственное производство</h3>
+                    <p class="plus__description">
+                      Полный контроль качества на каждом этапе
+                    </p>
+                  </div>
+                </li>
+                <li class="contact__pluses-item plus">
+                  <div class="plus__img">
+                    <img
+                      src="/images/contacts/contact/check-mark-circle.svg"
+                      alt=""
+                    />
+                  </div>
+                  <div class="plus__wrapper">
+                    <h3 class="plus__title">Гарантия качества</h3>
+                    <p class="plus__description">
+                      Долговечные материалы, проверенные временем
+                    </p>
+                  </div>
+                </li>
+                <li class="contact__pluses-item plus">
+                  <div class="plus__img">
+                    <img src="/images/contacts/contact/hammer.svg" alt="" />
+                  </div>
+                  <div class="plus__wrapper">
+                    <h3 class="plus__title">Укладка и монтаж</h3>
+                    <p class="plus__description">
+                      Мы занимаеся не только производством, но и установкой всей
+                      нашей продукции.
+                    </p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </section>
     </main>
@@ -342,5 +395,7 @@
     </section>
     <script src="/js/burger.js"></script>
     <script src="/js/popup.js"></script>
+    <!-- Validation, AJAX -->
+    <script src="/js/contacts/form.js"></script>
   </body>
 </html>
