@@ -80,9 +80,10 @@
     <link rel="stylesheet" href="/css/contacts.css" />
     <link rel="stylesheet" href="/css/normalize.css" />
     <!-- <script src="https://api-maps.yandex.ru/v3/?apikey=c3c0cc1a-21be-44ca-9bb4-386e773db1a3Y&lang=ru_RU"></script> -->
+    <script src="/js/libs/justValidate.min.js"></script>
   </head>
   <body>
-    <h1 class="visually-hidden">Укладка плитки от производителя</h1>
+    <h1 class="visually-hidden">Свяжитесь с нами</h1>
     <header class="header hidden-mobile">
       <div class="header__inner container">
         <address class="header__contacts">
@@ -192,65 +193,47 @@
             Крыму. Мы оперативно ответим на ваш запрос и поможем подобрать
             оптимальные решения для вашего участка или проекта.
           </p>
-          <address class="contact__contacts">
-            <ul class="contact__contacts-items">
-              <li class="contact__contacts-item">
-                <a href="tel:+79780829838" class="contact__contacts-item__link">
-                  <div
-                    class="contact__contacts-phone contact__contacts-item__wrapper"
-                  >
-                    <div
-                      class="contact__contacts-phone-img contact__contacts-item__img"
-                    >
-                      <img src="/images/header/phone.svg" alt="" />
-                    </div>
-                    <span
-                      class="contact__contacts-phone__description contact__contacts-item__description"
-                    >
-                      +7 978 082-98-38
-                    </span>
-                  </div>
-                </a>
+          <form class="contact__form form" id="form">
+            <h3 class="form__title">Оставьте заявку через форму</h3>
+            <ul class="form__items">
+              <li class="form__item">
+                <input
+                  type="text"
+                  name="formName"
+                  id="formName"
+                  autocomplete="name"
+                  class="form__input"
+                  placeholder=" "
+                />
+                <label for="formName" class="form__label">Имя*</label>
               </li>
-              <li class="contact__contacts-item contact__contacts-item__geo">
-                <div
-                  class="contact__contacts-geo contact__contacts-item__wrapper"
-                >
-                  <div
-                    class="contact__contacts-geo-img contact__contacts-item__img"
-                  >
-                    <img src="/images/header/address.svg" alt="" />
-                  </div>
-                  <span
-                    class="contact__contacts-geo__description contact__contacts-item__description"
-                  >
-                    г. Феодосия, Переулок Керченский 4 В
-                  </span>
-                </div>
+              <li class="form__item">
+                <input
+                  type="tel"
+                  name="formTel"
+                  id="formTel"
+                  autocomplete="tel"
+                  class="form__input"
+                  placeholder=" "
+                />
+                <label for="formTel" class="form__label">Телефон*</label>
               </li>
-              <li class="contact__contacts-item">
-                <a
-                  href="mailto:uniwersalstroj2008@mail.ru"
-                  class="contact__contacts-item__link"
-                >
-                  <div
-                    class="contact__contacts-mail contact__contacts-item__wrapper"
-                  >
-                    <div
-                      class="contact__contacts-mail-img contact__contacts-item__img"
-                    >
-                      <img src="/images/header/mail.svg" alt="" />
-                    </div>
-                    <span
-                      class="contact__contacts-mail__description contact__contacts-item__description"
-                    >
-                      uniwersalstroj2008@mail.ru
-                    </span>
-                  </div>
-                </a>
+              <li class="form__item">
+                <textarea
+                  name="formMessage"
+                  id="formMessage"
+                  class="form__textarea form__input"
+                  placeholder=" "
+                ></textarea>
+                <label for="formMessage" class="form__label">Сообщение</label>
               </li>
             </ul>
-          </address>
+            <button type="submit" class="form__button button">
+              Отправить заявку
+            </button>
+          </form>
+          <!-- Validation, AJAX -->
+          <script src="/js/contacts/form.js"></script>
         </div>
       </section>
     </main>
