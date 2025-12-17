@@ -34,7 +34,6 @@
   &::after {
     content: "";
     position: absolute;
-    // bottom: 1em;
     bottom: calc(50% - 0.9em);
     left: 50%;
     transform: translate(-50%, 50%);
@@ -111,7 +110,7 @@
       transform: translateY(-50%);
       width: var(--button-arrow-width);
       aspect-ratio: 1;
-      background: url("/images/catalog/right-arrow.svg") center / cover
+      background: url("/images/index/catalog/right-arrow.svg") center / cover
         no-repeat;
     }
   }
