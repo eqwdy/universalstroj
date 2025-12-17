@@ -80,6 +80,7 @@
     <link rel="stylesheet" href="/css/index.css" />
     <link rel="stylesheet" href="/css/normalize.css" />
     <!-- <script src="https://api-maps.yandex.ru/v3/?apikey=c3c0cc1a-21be-44ca-9bb4-386e773db1a3Y&lang=ru_RU"></script> -->
+    <script src="/js/libs/justValidate.min.js"></script>
   </head>
   <body>
     <svg
@@ -206,7 +207,12 @@
             Более 10 лет производим и укладываем плитку, бордюры и изделия для
             благоустройства с гарантией качества
           </p>
-          <button type="button" class="hero__button button button-request">
+          <button
+            type="button"
+            class="hero__button button button-request"
+            aria-expanded="false"
+            aria-controls="overlay"
+          >
             Оставить заявку
           </button>
         </div>
@@ -495,7 +501,11 @@
             Наши специалисты совершенно бесплатно приедут к Вам на объект для
             замеров, консультации и составления предварительной сметы.
           </p>
-          <button class="freeConsultation__button button button-request">
+          <button
+            class="freeConsultation__button button button-request"
+            aria-expanded="false"
+            aria-controls="overlay"
+          >
             Оставить заявку
           </button>
         </div>
@@ -615,6 +625,54 @@
         </div>
       </div>
     </footer>
+    <section
+      class="overlay"
+      id="overlay"
+      aria-modal="true"
+      role="dialog"
+      aria-hidden="true"
+    >
+      <form class="overlay__form form" id="form" tabindex="-1">
+        <h3 class="form__title">Оставьте заявку через форму</h3>
+        <button class="form__close" id="formClose" type="button"></button>
+        <ul class="form__items">
+          <li class="form__item">
+            <input
+              type="text"
+              name="formName"
+              id="formName"
+              autocomplete="name"
+              class="form__input"
+              placeholder=" "
+            />
+            <label for="formName" class="form__label">Имя*</label>
+          </li>
+          <li class="form__item">
+            <input
+              type="tel"
+              name="formTel"
+              id="formTel"
+              autocomplete="tel"
+              class="form__input"
+              placeholder=" "
+            />
+            <label for="formTel" class="form__label">Телефон*</label>
+          </li>
+          <li class="form__item">
+            <textarea
+              name="formMessage"
+              id="formMessage"
+              class="form__textarea form__input"
+              placeholder=" "
+            ></textarea>
+            <label for="formMessage" class="form__label">Сообщение</label>
+          </li>
+        </ul>
+        <button type="submit" class="form__button button">
+          Отправить заявку
+        </button>
+      </form>
+    </section>
     <section class="burger" id="burger">
       <button
         type="button"
@@ -656,8 +714,9 @@
       </div>
       <div class="popup__timer"></div>
     </section>
-    <script src="/js/slider.js"></script>
+    <script src="/js/index/slider.js"></script>
     <script src="/js/burger.js"></script>
     <script src="/js/popup.js"></script>
+    <script src="js/modal.js"></script>
   </body>
 </html>
