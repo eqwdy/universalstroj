@@ -2,10 +2,26 @@ const overlay = document.getElementById("overlay");
 const form = document.getElementById("form");
 function openOverlay() {
   overlay.setAttribute("aria-hidden", "false");
-  form.focus();
+  document.body.style.overflow = "hidden";
+  setTimeout(() => form.focus(), 300);
 }
 function closeOverlay() {
   overlay.setAttribute("aria-hidden", "true");
+  document.body.style.overflow = "";
+  resetErrorsField();
+}
+function resetErrorsField() {
+  inputs = document.querySelectorAll(".just-validate-error-field");
+  inputs.forEach((input) => {
+    input.classList.remove("just-validate-error-field");
+    input.removeAttribute("data-just-validate-fallback-disabled");
+    input.removeAttribute("style");
+
+    input
+      .closest(".form__item")
+      .querySelector(".just-validate-error-label")
+      .remove();
+  });
 }
 
 function smartOpenOverlay(btn) {
@@ -28,10 +44,26 @@ openBtns.forEach((btn) => {
 
 const formClose = document.getElementById("formClose");
 formClose.addEventListener("click", (e) => {
-  if (openedBtn) {
-    smartCloseOverlay(openedBtn);
-  } else {
-    closeOverlay();
+  // Animation
+  form.style.transform = "translateY(-100%) scale(0.6)";
+  setTimeout(() => {
+    if (openedBtn) {
+      smartCloseOverlay(openedBtn);
+    } else {
+      closeOverlay();
+    }
+
+    form.style.transform = "";
+  }, 300);
+});
+window.addEventListener("click", (e) => {
+  const overlayStatus = overlay.getAttribute("aria-hidden") === "false";
+  if (overlayStatus && e.target === overlay) {
+    if (openedBtn) {
+      smartCloseOverlay(openedBtn);
+    } else {
+      closeOverlay();
+    }
   }
 });
 
@@ -86,13 +118,14 @@ validator
   .onSuccess((e) => {
     e.preventDefault();
 
-    const form = e.target;
-    form.reset();
-    console.log("Сработало!");
-    togglePopup();
+    const formEl = e.target;
+    formEl.reset();
     if (openedBtn) {
       smartCloseOverlay(openedBtn);
     } else {
       closeOverlay();
     }
+
+    // AJAX
+    togglePopup();
   });

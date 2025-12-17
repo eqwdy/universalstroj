@@ -102,6 +102,11 @@
     border-radius: 5px;
     outline: none;
 
+    &::placeholder {
+      -webkit-user-select: none;
+      user-select: none;
+    }
+
     &:focus {
       border-color: #02923d;
       box-shadow: 0 0 4px #02923e75;

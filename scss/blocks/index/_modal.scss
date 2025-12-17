@@ -1,13 +1,20 @@
 .overlay {
-  display: none;
+  opacity: 0;
+  visibility: hidden;
   position: fixed;
   inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: rgba(0, 0, 0, 0.4);
 
   &[aria-hidden="false"] {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    opacity: 1;
+    visibility: visible;
+
+    .form {
+      transform: translateY(0) scale(1);
+    }
   }
 }
 
@@ -17,6 +24,8 @@
   border-radius: 8px;
   background-color: white;
   position: relative;
+  transform: translateY(-100%) scale(0.6);
+  transition: var(--transition-button);
 
   &:focus {
     outline: none;
@@ -109,6 +118,11 @@
     border: 1px solid rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     outline: none;
+
+    &::placeholder {
+      -webkit-user-select: none;
+      user-select: none;
+    }
 
     &:focus {
       border-color: #02923d;

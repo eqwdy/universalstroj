@@ -15,26 +15,14 @@
     @media (max-width: 650px) {
       grid-template-columns: 1fr;
 
-      //   .catalog__item {
-      // display: flex;
-      // justify-content: center;
-      // align-items: center;
-      //   }
       .product {
         max-width: 400px;
       }
     }
   }
 
-  &__button {
-    //   display: flex;
-    //   align-items: center;
-    //   column-gap: 0.4em;
-    //   white-space: nowrap;
-
-    &-link {
-      text-decoration: none;
-    }
+  &__button-link {
+    text-decoration: none;
   }
 }
 

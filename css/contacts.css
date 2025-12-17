@@ -663,6 +663,16 @@
   border-radius: 5px;
   outline: none;
 }
+.form__input::-moz-placeholder {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+       user-select: none;
+}
+.form__input::placeholder {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+       user-select: none;
+}
 .form__input:focus {
   border-color: #02923d;
   box-shadow: 0 0 4px rgba(2, 146, 62, 0.4588235294);
