@@ -113,6 +113,11 @@
       flex-direction: column;
       row-gap: 5px;
     }
+
+    &-link {
+      text-decoration: none;
+      color: white;
+    }
   }
 
   &__contacts {

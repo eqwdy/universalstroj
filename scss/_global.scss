@@ -53,6 +53,7 @@
 
 .title-big {
   @include fluid-text(60, 40);
+  line-height: 1;
 
   @media (max-width: 610px) {
     font-size: 35px;
@@ -60,6 +61,7 @@
 }
 .title-medium {
   @include fluid-text(40, 30);
+  line-height: 1;
 }
 
 .button {

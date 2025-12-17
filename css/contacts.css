@@ -68,6 +68,7 @@
 
 .title-big {
   font-size: clamp(40px, 4.1666666667vw, 60px);
+  line-height: 1;
 }
 @media (max-width: 610px) {
   .title-big {
@@ -77,6 +78,7 @@
 
 .title-medium {
   font-size: clamp(30px, 2.7777777778vw, 40px);
+  line-height: 1;
 }
 
 .button {
@@ -338,6 +340,10 @@
   flex-direction: column;
   row-gap: 5px;
 }
+.burger__nav-link {
+  text-decoration: none;
+  color: white;
+}
 .burger__contacts {
   padding-block: 20px;
   display: flex;
@@ -561,6 +567,10 @@
   }
 }
 
+.contact__title {
+  line-height: 1;
+  margin-bottom: 10px;
+}
 .contact__description {
   color: var(--color-light-gray);
   margin-bottom: 20px;
@@ -751,5 +761,6 @@
   .plus__title {
     font-size: 1.25rem;
     white-space: wrap;
+    margin-bottom: 2px;
   }
 }/*# sourceMappingURL=contacts.css.map */
